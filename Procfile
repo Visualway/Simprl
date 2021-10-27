@@ -1,1 +1,1 @@
-web: gunicorn simprl.wsgi
+web: gunicorn Simprl.wsgi
