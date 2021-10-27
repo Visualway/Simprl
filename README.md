@@ -1,1 +1,1 @@
-# Simprl_django
+# Simprl
