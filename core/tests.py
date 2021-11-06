@@ -10,3 +10,4 @@ class URLTestCase(TestCase):
     def test_url_id(self):
         python_site = URL.objects.get(long_url="https://python.org")
         self.assertEqual(str(python_site), python_site.hash)
+
