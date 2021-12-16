@@ -15,12 +15,25 @@ Including another URLconf
 """
 from django.conf import settings
 from django.conf.urls.static import static
+
 from django.contrib import admin
+
 from django.urls import path
+
 from core import views
+from core import api
 
 urlpatterns = [
+    # Home View
     path('', views.home, name="home"),
+
+    # API
+    path('api/v1/url/create/', api.create_url_api, name='create_url'),
+
+    # URL Hash
     path('<str:hash>', views.redirect_to_url, name='redirect_to_url'),
+
+    # Admin
     path('admin/', admin.site.urls),
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

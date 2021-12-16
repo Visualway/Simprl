@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-41m@t&wqrqozc&%vek$7&=q*)6y++@2+3!orrie_ypnfyauska'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG  = os.environ.get("DEBUG", False)
+DEBUG = os.environ.get("DEBUG")
 
 ALLOWED_HOSTS = ['localhost', os.environ.get('ProdHost', '')]
 
@@ -121,9 +121,3 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)    
-STATICFILES_DIR = [BASE_DIR / 'static']
-STATIC_ROOT = BASE_DIR / 'staticfiles'

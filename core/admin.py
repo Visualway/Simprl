@@ -3,4 +3,8 @@ from .models import URL
 # Register your models here.
 
 
-admin.site.register(URL)
+class URLAdmin(admin.ModelAdmin):
+    list_display = ['long_url', 'hash']
+
+
+admin.site.register(URL, URLAdmin)

@@ -57,7 +57,7 @@ a.btn.btn-get-started {
   text-transform: capitalize;
 }
 
-button.btn-shorten,
+a.btn-shorten,
 a.btn.btn-shorten {
   width: 100%;
 }
@@ -144,7 +144,7 @@ div.hero div.hero-text p.hero-info {
   padding-bottom: 2.5rem;
 }
 
-div.hero form.shorten-form {
+div.hero div.shorten-form {
   background: url("./images/bg-shorten-mobile.svg") center center / 100% 100%,
     no-repeat var(--dark-violet);
   border-radius: 8px;
@@ -157,7 +157,7 @@ div.hero form.shorten-form {
   width: 84%;
 }
 
-div.hero form.shorten-form input[type="text"] {
+div.hero div.shorten-form input[type="URL"] {
   width: 100%;
   padding: 0.8rem 1rem;
   font-size: 1rem;
@@ -168,24 +168,24 @@ div.hero form.shorten-form input[type="text"] {
   border: 2px solid transparent;
 }
 
-div.hero form.shorten-form.empty input[type="text"] {
+div.hero div.shorten-form.empty input[type="URL"] {
   border: 2px solid var(--red);
 }
 
-div.hero form.shorten-form.empty input[type="text"]::placeholder {
+div.hero div.shorten-form.empty input[type="URL"]::placeholder {
   color: var(--red);
   opacity: 1;
 }
 
-div.hero form.shorten-form.empty input[type="text"]:-ms-input-placeholder {
+div.hero div.shorten-form.empty input[type="URL"]:-ms-input-placeholder {
   color: var(--red);
 }
 
-div.hero form.shorten-form.empty input[type="text"]::-ms-input-placeholder {
+div.hero div.shorten-form.empty input[type="URL"]::-ms-input-placeholder {
   color: var(--red);
 }
 
-div.hero form.shorten-form p.error-msg {
+div.hero div.shorten-form p.error-msg {
   color: var(--red);
   text-align: left;
   padding-left: 1rem;
@@ -193,11 +193,11 @@ div.hero form.shorten-form p.error-msg {
   display: none;
 }
 
-div.hero form.shorten-form.empty p.error-msg {
+div.hero div.shorten-form.empty p.error-msg {
   display: block;
 }
 
-div.hero form.shorten-form button.btn-shorten {
+div.hero div.shorten-form button.btn-shorten {
   padding: 0.8rem;
   font-size: 1rem;
   background-color: var(--cyan);
@@ -384,13 +384,13 @@ footer div.social-media a.social-media-link {
 /* *****media queries***** */
 @media only screen and (min-width: 800px) {
   a.btn.btn-get-started,
-  button.btn.btn-shorten-it,
+  a.btn.btn-shorten-it,
   a.btn.btn-copy {
     transition: all 0.2s;
   }
 
   a.btn.btn-get-started:hover,
-  button.btn.btn-shorten-it:hover,
+  a.btn.btn-shorten-it:hover,
   a.btn.btn-copy:hover {
     -webkit-filter: brightness(115%);
     filter: brightness(115%);
@@ -435,7 +435,7 @@ footer div.social-media a.social-media-link {
     width: 100%;
   }
 
-  div.hero form.shorten-form button.btn-shorten {
+  div.hero form.shorten-form a.btn-shorten {
     width: max-content;
     margin-left: 1rem;
     margin-top: 0;
@@ -463,7 +463,7 @@ footer div.social-media a.social-media-link {
     margin-left: auto;
   }
 
-  div.shortened-links div.shortened-link-container a.btn-copy {
+  div.shortened-links div.shortened-link-container button.btn-copy {
     margin-left: 1rem;
     width: max-content;
   }
