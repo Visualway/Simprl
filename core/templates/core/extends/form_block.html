@@ -1,0 +1,54 @@
+<div class="shorten-form" id="shorten-form">
+    <div class="field is-grouped">
+        <p class="control is-expanded">
+        {% csrf_token %}
+        <label for="shorten">
+            <input type="URL" name="shorten" id="shorten" class="input" placeholder="Shorten a link here..." />
+        </label>
+        </p>
+        <p class="control">
+            <button class="button is-success is-rounded" id="btn-shorten-it" 
+            href="#url_block"
+            onclick="create_url(long_url=document.getElementById('shorten').value)"
+            role=button>
+            Shorten it!
+            </button>
+        </p>
+    </div>
+</div>
+{% block script %}
+<script>
+    // A simple script to just send a post request to create a url
+function create_url(long_url) {
+    url_block = document.getElementById('url_block');
+    fetch("{% url 'create_url' %}", {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': csrftoken,
+            'Content-Type': 'application/json'
+            },
+
+        body: JSON.stringify({
+            long_url: long_url
+        })
+
+        }).then(function (response) {
+            return response.json();
+            console.log(response)
+    
+        }).then(function (data) {
+            if (data.success == true) {
+                console.log(data);
+                url_block.classList.remove('is-hidden');
+                document.getElementById('long_url').innerHTML = data.long_url;
+                document.getElementById('short_url').innerHTML = data.short_url;
+                document.getElementById('short_url').href = data.short_url;
+                let short_url = data.short_url;
+                window.location = '#url_block_content'
+                document.getElementById('copy-btn').focus();
+            }
+        });
+    }
+
+</script>
+{% endblock script %}

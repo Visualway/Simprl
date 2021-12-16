@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+<div class="hero">
+    <div class="hero-img-container">
+        <img src="{% static 'images/illustration-working.svg' %}"
+            alt="Illustration of a person working with a computer" class="hero-img" />
+    </div>
+    <div class="hero-text">
+        <h1 class="main-heading heading title is-size-1">Simplify your URLs with Simprl</h1>
+        <p class="hero-info is-info is-size-3">
+            Shorten your links in just a minute.
+        </p>
+        <a href="#shorten-form" class="button is-success is-rounded" role="button">Get Started</a>
+    </div>
+    {% include 'core/extends/form_block.html' %}
+</div>
+<br>    
+    {% include 'core/extends/url_block.html' %}
+
+{% endblock content %}
+
+{% block script %}
+
+<script>
+
+// A simple function to copy the text
+function copyText(val) {
+    navigator.clipboard.writeText(val);
+    }
+
+// Default Django way to get the CSRF
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+    }
+
+const csrftoken = getCookie('csrftoken');
+
+
+</script>
+
+{% endblock script %}
