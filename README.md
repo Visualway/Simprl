@@ -12,8 +12,7 @@ Simplify your URLs in seconds.
   
 ## Screenshot
 
-![ss1](https://i.ibb.co/ZHPL684/screenshot.png)
-
+![screenshot (1)](https://user-images.githubusercontent.com/54215788/146382851-463b906f-7a46-4a3c-afeb-ec7e1926fc3e.png)
   
 ## Built with 
 
