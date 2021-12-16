@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+<div class="hero">
+    <div class="hero-img-container">
+        <img src="{% static 'images/illustration-working.svg' %}"
+            alt="Illustration of a person working with a computer" class="hero-img" />
+    </div>
+    <div class="hero-text">
+        <h1 class="main-heading heading title is-size-1">Simplify your URLs with Simprl</h1>
+        <p class="hero-info is-info is-size-3">
+            Shorten your links in just a minute.
+        </p>
+        <a href="{% url 'home' %}" class="button is-success is-rounded" role="button">Get Started</a>
+    </div>
+    <div class="box">
+    	<h1 class="title is-1">404 Not Found</h1>
+    	<a href="{% url 'home' %}" class="button is-primary is-rounded">Go to home 🏡</a>
+    </div>
+</div>
+<br>    
+    {% include 'core/extends/url_block.html' %}
+
+{% endblock content %}
